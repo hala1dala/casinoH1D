@@ -22,14 +22,13 @@ public class UserAccountController {
 
     @GetMapping("/registration")
     public String getRegistrationView(){
-        return "page";
+        return "user/registration";
     }
 
     @PostMapping("/registration")
     public ResponseEntity<UserAccount> registrateUser(@ModelAttribute UserAccount userAccount){
         userAccountRepository.save(userAccount);
         log.info("User created.");
-
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }

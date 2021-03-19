@@ -1,6 +1,5 @@
 package com.bta.casino.casinodemo.service.impl;
 
-import com.bta.casino.casinodemo.model.SimpleBet;
 import com.bta.casino.casinodemo.model.SimpleGameResult;
 import com.bta.casino.casinodemo.model.SimpleResult;
 import com.bta.casino.casinodemo.model.UserAccount;
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Slf4j
 @Service
@@ -49,21 +47,20 @@ public class SimpleGameServiceImpl implements SimpleGameService {
         return result;
 */
         simpleBetRepository.findAllByActiveIsTrue().stream()
+                .peek(sb -> sb.setActive(Boolean.FALSE))
+                .peek(sb -> simpleBetRepository.save(sb))
                 .filter(sb -> sb.getBet() == result.getResult())
                 .forEach(sb -> {
                     final UserAccount userAccount = sb.getUserAccount();
                     userAccount.setBalance(userAccount.getBalance() + (2 * sb.getBetValue()));
                     userAccountRepository.save(userAccount);
                 });
-
         return result;
-
-
     }
 
     private SimpleGameResult generateSimpleGameResult() {
         final SimpleResult[] values = SimpleResult.values();
-        final int randomIndex = getRandom(0, values.length - 1);
+        final int randomIndex = getRandom(0, values.length);
         final SimpleResult randomResult = values[randomIndex];
 
         return SimpleGameResult.builder()

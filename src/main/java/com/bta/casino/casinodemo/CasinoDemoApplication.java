@@ -11,9 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CasinoDemoApplication implements CommandLineRunner {
 
 	@Autowired
-	private SimpleGameService simpleGame;
-
-	@Autowired
 	private GameTrigger gameTrigger;
 
 	public static void main(String[] args) {
@@ -22,7 +19,7 @@ public class CasinoDemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args)throws Exception{
-		//gameTrigger.startGames(5000l, 3);
+		//gameTrigger.startGames(20000l, 3);
 
 	}
 
