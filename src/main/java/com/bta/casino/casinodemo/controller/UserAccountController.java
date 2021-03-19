@@ -21,7 +21,7 @@ public class UserAccountController {
     private UserAccountRepository userAccountRepository;
 
     @GetMapping("/registration")
-    public String getRegistratinView(){
+    public String getRegistrationView(){
         return "page";
     }
 
