@@ -46,7 +46,7 @@
                     <div id="emailHelp" class="form-text">Input your Email. Must be Unique!</div>
                 </div>
 
-                <button type="submit" class="btn btn-dark">Registration</button>
+                <button type="submit" class="btn btn-dark" style="margin-bottom: 10px">Registration</button>
             </form>
         </div>
         <div class="col"></div>

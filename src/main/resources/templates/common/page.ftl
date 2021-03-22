@@ -11,11 +11,10 @@
 
     <div class="container">
         <div>
-            <a href="/spin">Play game</a>
+            <a href="/spin" class="btn btn-primary" style="margin-top: 10px">Play game</a>
         </div>
 
         <#nested>
-
     </div>
 
     </body>
