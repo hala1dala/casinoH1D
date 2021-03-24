@@ -10,6 +10,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -45,6 +47,12 @@ public class UserAccount implements Serializable {
 
     private int balance;
 
-    @OneToMany(mappedBy = "userAccount", fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "userAccount",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true,
+            cascade = CascadeType.ALL)
     private Collection<SimpleBet> bets;
+
+    @ManyToMany(mappedBy = "userAccounts", fetch = FetchType.EAGER)
+    private Set<Role> roles = new HashSet<>();
 }

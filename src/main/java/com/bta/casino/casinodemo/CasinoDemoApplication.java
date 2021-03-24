@@ -1,7 +1,6 @@
 package com.bta.casino.casinodemo;
 
 import com.bta.casino.casinodemo.service.GameTrigger;
-import com.bta.casino.casinodemo.service.SimpleGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
