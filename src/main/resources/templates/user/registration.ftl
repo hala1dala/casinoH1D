@@ -1,6 +1,6 @@
 <#import "../common/page.ftl" as common>
 <@common.page>
-    <div class="row">
+    <div class="row" style="margin-top: 60px">
         <div class="col"></div>
         <div class="col">
             <form action="/user/registration" method="post">

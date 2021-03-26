@@ -3,6 +3,7 @@ package com.bta.casino.casinodemo.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ import java.util.Set;
 @Setter
 @SuperBuilder
 @NoArgsConstructor
+@ToString(exclude = "userAccounts")
 @Entity
 public class Role implements Serializable {
 

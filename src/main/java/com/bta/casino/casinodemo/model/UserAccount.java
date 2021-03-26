@@ -3,6 +3,7 @@ package com.bta.casino.casinodemo.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -19,6 +20,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Setter
 @SuperBuilder
 @NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "user_account")
 public class UserAccount implements Serializable {

@@ -1,9 +1,9 @@
 <#import "../common/page.ftl" as common>
 <@common.page>
-    <div class="row">
+    <div class="row" style="margin-top: 60px">
         <div class="col"></div>
         <div class="col">
-            <form action="/bet" method="post">
+            <form action="/bet/new" method="post">
                 <div class="mb-3">
                     <label for="bet" class="form-label">Chose option:</label>
                     <select name="bet" class="form-select" aria-describedby="betHelp">

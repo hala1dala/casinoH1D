@@ -11,4 +11,5 @@ public interface SimpleBetRepository extends CrudRepository<SimpleBet, Long> {
 
     //select * from simple_bet where active = true;
     List<SimpleBet> findAllByActiveIsTrue();
+    List<SimpleBet> findAllByUserAccountUsername(String username);
 }
